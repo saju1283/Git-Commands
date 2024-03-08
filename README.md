@@ -1,79 +1,77 @@
-গিট কমান্ডস
+Git Commands
 ============
 
-## অনুবাদিত সংস্করণ
-- [English version (original)](README.md)
+## Translated Versions
 - [Versão em português](READMEpt.md)
 - [Versión en español](READMEes.md)
+- [Türkçe versiyon](READMEtr.md)
 - [বাংলা সংস্করণ](READMEbn.md)
 - [हिन्दी अनुवाद](READMEhi.md)
 - [العربية](READMEar.md)
 
 ___
 
-_প্রায়শই ব্যবহৃত গিট কমান্ডের তালিকা_
+_A list of my commonly used Git commands_
 
-*আপনি যদি গিট এলিয়াসে আগ্রহী হন তবে এখানে '.bash_profile' এ দেখুন: https://github.com/joshnh/bash_profile/blob/master/.bash_profile*
-
-*অনুবাদে মূল ইংরেজি শব্দগুলো সংরক্ষণ করা হয়েছে, যেখানে "রিপোজিটরি" শব্দটিকে "রেপো", "লোকাল" কে "লোকাল" এবং "রিমোট" কে "রিমোট" হিসেবে অনুবাদ করা হয়েছে। আশা করি এগুলো বিবেচনা করলে ডকুমেন্ট থেকে উপকৃত হতে পারবেন .*
+*If you are interested in my Git aliases, have a look at my `.bash_profile`, found here: https://github.com/joshnh/bash_profile/blob/master/.bash_profile*
 
 --
 
-### প্রজেক্ট নামানো ও তৈরি করা
+### Getting & Creating Projects
 
-| কমান্ড | বর্ণনা |
+| Command | Description |
 | ------- | ----------- |
-| `git init` | একটি লোকাল গিট রেপো শুরু করুন |
-| `git clone ssh://git@github.com/[username]/[repository-name].git` | একটি রিমোট রেপোর লোকাল অনুলিপি তৈরি করুন |
+| `git init` | Initialize a local Git repository |
+| `git clone ssh://git@github.com/[username]/[repository-name].git` | Create a local copy of a remote repository |
 
-### বেসিক স্ন্যাপশট
+### Basic Snapshotting
 
-| কমান্ড | বর্ণনা |
+| Command | Description |
 | ------- | ----------- |
-| `git status` | স্ট্যটাস চেক করুন |
-| `git add [file-name.txt]` | স্টেজিং এরিয়ায় একটি ফাইল এড করুন  |
-| `git add -A` | স্টেজিং এলাকায় সমস্ত নতুন এবং পরিবর্তিত ফাইল এড করুন |
-| `git commit -m "[commit message]"` | পরিবর্তনগুলোর কমিট (ব্যাখ্যা) করুন  |
-| `git rm -r [file-name.txt]` | ফাইল (বা ডিরেক্টরি) ডিলেট করুন |
+| `git status` | Check status |
+| `git add [file-name.txt]` | Add a file to the staging area |
+| `git add -A` | Add all new and changed files to the staging area |
+| `git commit -m "[commit message]"` | Commit changes |
+| `git rm -r [file-name.txt]` | Remove a file (or folder) |
 
-### ব্রাঞ্চিং এবং মার্জিং
+### Branching & Merging
 
-| কমান্ড | বর্ণনা |
+| Command | Description |
 | ------- | ----------- |
-| `git branch` | ব্রাঞ্চের তালিকা (তারকা চিহ্ন বর্তমান ব্রাঞ্চ নির্দেশ করে) |
-| `git branch -a` | সকল ব্রাঞ্চের তালিকা (লোকাল এবং রিমোট উভয়ই একত্রে) |
-| `git branch [branch name]` | নতুন ব্রাঞ্চ তৈরি করুন |
-| `git branch -d [branch name]` | ব্রাঞ্চ ডিলিট করুন  |
-| `git push origin --delete [branch name]` | রিমোট ব্রাঞ্চ ডিলিট করুন |
-| `git checkout -b [branch name]` | একটি নতুন ব্রাঞ্চ তৈরি করুন এবং এতে স্যুইচ করুন |
-| `git checkout -b [branch name] origin/[branch name]` | রিমোট ব্রাঞ্চ ক্লোন করুন এবং এটিতে স্যুইচ করুন |
-| `git branch -m [old branch name] [new branch name]` | লোকাল ব্রাঞ্চের নাম পরিবর্তন করুন |
-| `git checkout [branch name]` | স্পেসিফিক ব্রাঞ্চে স্যুইচ করুন |
-| `git checkout -` | সর্বশেষ চেক করা ব্রাঞ্চে স্যুইচ করুন |
-| `git checkout -- [file-name.txt]` | স্পেসিফিক ফাইলের পরিবর্তন মুছে ফেলুন |
-| `git merge [branch name]` | একটিভ ব্রাঞ্চের সাথে আরেকটি ব্রাঞ্চ মার্জ করুন |
-| `git merge [source branch] [target branch]` | টার্গেট ব্রাঞ্চের সাথে স্পেসিফিক ব্রাঞ্চ একত্রিত করুন |
-| `git stash` | অসমাপ্ত কাজের ডিরেক্টরিতে পরিবর্তনগুলি সংরক্ষণ করুন |
-| `git stash clear` | স্ট্যাশ এন্টিগুলো সরিয়ে ফেলুন |
+| `git branch` | List branches (the asterisk denotes the current branch) |
+| `git branch -a` | List all branches (local and remote) |
+| `git branch [branch name]` | Create a new branch |
+| `git branch -d [branch name]` | Delete a branch |
+| `git push origin --delete [branch name]` | Delete a remote branch |
+| `git checkout -b [branch name]` | Create a new branch and switch to it |
+| `git checkout -b [branch name] origin/[branch name]` | Clone a remote branch and switch to it |
+| `git branch -m [old branch name] [new branch name]` | Rename a local branch |
+| `git checkout [branch name]` | Switch to a branch |
+| `git checkout -` | Switch to the branch last checked out |
+| `git checkout -- [file-name.txt]` | Discard changes to a file |
+| `git merge [branch name]` | Merge a branch into the active branch |
+| `git merge [source branch] [target branch]` | Merge a branch into a target branch |
+| `git stash` | Stash changes in a dirty working directory |
+| `git stash clear` | Remove all stashed entries |
 
-### শেয়ারিং এবং আপডেটিং প্রোজেক্টগুলো
+### Sharing & Updating Projects
 
-| কমান্ড | বর্ণনা |
+| Command | Description |
 | ------- | ----------- |
-| `git push origin [branch name]` | রিমোট রেপোতে ব্রাঞ্চ পুশ করুন  |
-| `git push -u origin [branch name]` | রিমোট রেপোতে পরিবর্তনগুলি পুশ করুন (এবং ব্রাঞ্চটি মনে রাখুন) |
-| `git push` | রিমোট রিপোজিটরিতে পরিবর্তনগুলি পুশ করুন (যে শাখাটি ইতিমধ্যে মনে রাখা হয়েছে) |
-| `git push origin --delete [branch name]` | রিমোট ব্রাঞ্চ ডিলিট করুন |
-| `git pull` | সর্বশেষ কমিট দ্বারা স্থানীয় রেপো আপডেট করুন |
-| `git pull origin [branch name]` | রিমোট রেপো থেকে পরিবর্তনগুলি পুল করুন |
-| `git remote add origin ssh://git@github.com/[username]/[repository-name].git` | রিমোট রেপো এড করুন |
-| `git remote set-url origin ssh://git@github.com/[username]/[repository-name].git` | রেপোর অরিজিন ব্রাঞ্চে SSH এ সেট করুন |
+| `git push origin [branch name]` | Push a branch to your remote repository |
+| `git push -u origin [branch name]` | Push changes to remote repository (and remember the branch) |
+| `git push` | Push changes to remote repository (remembered branch) |
+| `git push origin --delete [branch name]` | Delete a remote branch |
+| `git pull` | Update local repository to the newest commit |
+| `git pull origin [branch name]` | Pull changes from remote repository |
+| `git remote add origin ssh://git@github.com/[username]/[repository-name].git` | Add a remote repository |
+| `git remote set-url origin ssh://git@github.com/[username]/[repository-name].git` | Set a repository's origin branch to SSH |
 
-### পর্যালোচনা এবং তুলনা
+### Inspection & Comparison
 
-| কমান্ড | বর্ণনা |
+| Command | Description |
 | ------- | ----------- |
-| `git log` | পরিবর্তনগুলি দেখুন|
-| `git log --summary` | পরিবর্তন দেখুন (বিস্তারিত) |
-| `git log --oneline` | পরিবর্তনগুলি দেখুন (সংক্ষেপে)|
-| `git diff [source branch] [target branch]` | মার্জ করার আগে চেঞ্জগুলির প্রিভিউ দেখুন |
+| `git log` | View changes |
+| `git log --summary` | View changes (detailed) |
+| `git log --oneline` | View changes (briefly) |
+| `git diff [source branch] [target branch]` | Preview changes before merging |
